@@ -7,3 +7,4 @@ node_modules
 *.log
 dist/
 lib
+npm-debug.log
