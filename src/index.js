@@ -16,4 +16,4 @@ export default class GUID {
     }
 }
 
-GUID.factory.$inject = [];
+GUID.$inject = [];
