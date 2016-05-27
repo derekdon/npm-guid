@@ -1,19 +1,16 @@
 'use strict';
 
+const DELIM = '-';
+
 export default class GUID {
-
-    constructor() {
+    
+    static generate() {
+        return GUID._s4() + GUID._s4() + DELIM + GUID._s4() + DELIM + GUID._s4() +
+            DELIM + GUID._s4() + DELIM + GUID._s4() + GUID._s4() + GUID._s4();
     }
 
-    generate() {
-        return this._s4() + this._s4() + '-' + this._s4() + '-' + this._s4() +
-            '-' + this._s4() + '-' + this._s4() + this._s4() + this._s4();
-    }
-
-    _s4() {
+    static _s4() {
         return Math.floor((1 + Math.random()) * 0x10000)
             .toString(16).substring(1);
     }
 }
-
-GUID.$inject = [];
